@@ -38,13 +38,6 @@ const userInput = () =>
 
             {
                 type: 'input',
-                message: 'Table of Contents',
-                name: 'table of contents',
-                validate: (value) => { if (value) { return true } else { return 'Requrired - Please input a value' } },
-            },
-
-            {
-                type: 'input',
                 message: 'Installation Directions',
                 name: 'installation',
                 validate: (value) => { if (value) { return true } else { return 'Requrired - Please input a value' } },
@@ -60,8 +53,13 @@ const userInput = () =>
             {
                 type: 'list',
                 message: 'License - select',
+                choices: [
+                    "MIT", 
+                    "Apache", 
+                    "GPL", 
+                    "GNU"
+                ],
                 name: 'License',
-                choices: ["The MIT license", "Apache License", "The GPL License", "GNU License", "No License"],
                 validate: (value) => { if (value) { return true } else { return 'Requrired - Please input a value' } },
             },
             {
@@ -103,10 +101,22 @@ const userInput = () =>
 const generateMD = (answers) =>
 `
 # Title of Project: 
-    ${answers.title}
+${answers.title}
 
 ## Description
-  ${answers.description}
+${answers.description}
+
+
+## Table of contents
+  1. [Installation](#installation)
+  2. [Usage](#usage)
+  3. [License](#License)
+  4. [Contributions](#contributions)
+  5. [Tests](#tests)
+  6. [Contact Informtion](#gihub)
+
+
+
 ## Installation
 
   ${answers.installation}
@@ -115,9 +125,10 @@ const generateMD = (answers) =>
   ${answers.usage}
 
 ## License
-${answers.license}
+${answers.License}
 
-![MIT License Link](https://img.shields.io/badge/license-MIT-blue)
+[![GitHub license](https://img.shields.io/github/license/JGreenOS/ReadMeGen?style=for-the-badge)](https://github.com/JGreenOS/ReadMeGen/blob/master/LICENSE)
+
 
 ## Contributions
   ${answers.contributions}
