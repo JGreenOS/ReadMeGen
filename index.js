@@ -18,7 +18,7 @@ const util = require('util');
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
-//using inquirer to generate questions//
+//using inquirer to generate questions, including validation//
 const userInput = () =>
     inquirer.prompt(
         [
@@ -26,28 +26,28 @@ const userInput = () =>
                 type: 'input',
                 message: 'Title of project',
                 name: 'title',
-                validate: (value) => { if (value) { return true } else { return 'Requrired - Please input a value' } },
+                validate: (value) => { if (value) { return true } else { return 'Required - Please input a value' } },
             },
 
             {
                 type: 'input',
                 message: 'Description of project',
                 name: 'description',
-                validate: (value) => { if (value) { return true } else { return 'Requrired - Please input a value' } },
+                validate: (value) => { if (value) { return true } else { return 'Required - Please input a value' } },
             },
 
             {
                 type: 'input',
                 message: 'Installation Directions',
                 name: 'installation',
-                validate: (value) => { if (value) { return true } else { return 'Requrired - Please input a value' } },
+                validate: (value) => { if (value) { return true } else { return 'Required - Please input a value' } },
             },
 
             {
                 type: 'input',
                 message: 'Usage directions',
                 name: 'usage',
-                validate: (value) => { if (value) { return true } else { return 'Requrired - Please input a value' } },
+                validate: (value) => { if (value) { return true } else { return 'Required - Please input a value' } },
             },
 
             {
@@ -60,44 +60,44 @@ const userInput = () =>
                     "GNU"
                 ],
                 name: 'License',
-                validate: (value) => { if (value) { return true } else { return 'Requrired - Please input a value' } },
+                validate: (value) => { if (value) { return true } else { return 'Required - Please input a value' } },
             },
             {
                 type: 'input',
                 message: 'How to contribute',
                 name: 'contributions',
-                validate: (value) => { if (value) { return true } else { return 'Requrired - Please input a value' } },
+                validate: (value) => { if (value) { return true } else { return 'Required - Please input a value' } },
             },
 
             {
                 type: 'input',
                 message: 'Tests',
                 name: 'tests',
-                validate: (value) => { if (value) { return true } else { return 'Requrired - Please input a value' } },
+                validate: (value) => { if (value) { return true } else { return 'Required - Please input a value' } },
             },
 
             {
                 type: 'input',
                 message: 'Where to direct questions',
                 name: 'questions',
-                validate: (value) => { if (value) { return true } else { return 'Requrired - Please input a value' } },
+                validate: (value) => { if (value) { return true } else { return 'Required - Please input a value' } },
             },
 
             {
                 type: 'input',
                 message: 'GitHub username',
                 name: 'GHusername',
-                validate: (value) => { if (value) { return true } else { return 'Requrired - Please input a value' } },
+                validate: (value) => { if (value) { return true } else { return 'Required - Please input a value' } },
             },
 
             {
                 type: 'input',
                 message: 'Developer Email Address',
                 name: 'EmailAddress',
-                validate: (value) => { if (value) { return true } else { return 'Requrired - Please input a value' } },
+                validate: (value) => { if (value) { return true } else { return 'Required - Please input a value' } },
             },
         ]);
-
+//this function generates the markdown file using the answers stored in the inquirer package
 const generateMD = (answers) =>
 `
 # Title of Project: 
@@ -113,7 +113,7 @@ ${answers.description}
   3. [License](#License)
   4. [Contributions](#contributions)
   5. [Tests](#tests)
-  6. [Contact Informtion](#gihub)
+  6. [Contact Informtion](#github)
 
 
 
