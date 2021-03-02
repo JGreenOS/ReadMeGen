@@ -21,5 +21,7 @@ https://github.com/JGreenOS/ReadMeGen/blob/master/ReadMe%20Walkthrough.mp4
 
 ### Sample Read Me File
 
+https://github.com/JGreenOS/ReadMeGen/blob/master/READMESample
+
 
 
