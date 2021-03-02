@@ -17,8 +17,9 @@ After the file is created, each of the answers are inserted into a markdown file
 
 ### Video Link
 
-
+https://github.com/JGreenOS/ReadMeGen/blob/master/ReadMe%20Walkthrough.mp4
 
 ### Sample Read Me File
+
 
 
