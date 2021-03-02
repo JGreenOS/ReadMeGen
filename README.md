@@ -14,3 +14,11 @@ When the file is run from node index.js, the user is prompted to answer several 
 * Developer contact information
 
 After the file is created, each of the answers are inserted into a markdown file, a table of contents is available and a badge for the appropriate license is displayed.
+
+### Video Link
+
+
+
+### Sample Read Me File
+
+
